@@ -6,13 +6,16 @@
 
 # ----------------------------------------------------
 # 
-# This Version is slow because it is no memoized
+# This like a billion times faster than the niave implementation
 
+fibs = {0: 1, 1: 1, 2: 2}
 def fib(n):
-	if n < 2:
-		return n
+	global fibs
+	if n in fibs:
+		return fibs[n]
 	else:
-		return fib(n - 1) + fib(n - 2)
+		fibs[n] = fib(n - 1) + fib(n - 2)
+		return fibs[n]
 
 n = 0
 sum = 0
