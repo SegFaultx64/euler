@@ -12,8 +12,7 @@ while(curFib < 4000000) {
 	if (curFib % 2 == 0) {
 		sum += curFib
 	}
-	(lastFib, curFib) = [curFib, lastFib]
-	curFib += lastFib
+	(lastFib, curFib) = [curFib, lastFib + curFib]
 }
 
 println sum

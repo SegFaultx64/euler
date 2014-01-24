@@ -14,8 +14,7 @@ while ($curFib <= 4000000) {
 	if ($curFib % 2 == 0) {
 		$sum += $curFib;
 	}
-	list($lastFib, $curFib) = [$curFib, $lastFib];
-	$curFib += $lastFib;
+	list($lastFib, $curFib) = [$curFib, $lastFib + $curFib];
 }
 
 echo $sum;

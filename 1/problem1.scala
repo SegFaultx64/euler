@@ -10,3 +10,8 @@ println ((0 to 999).reduce((value, carry) => {
 		value + 0
 	}
 }))
+
+// Worse effeciancy, but more idiomatic
+// 2 iterations rather than 1
+
+println ((0 to 999).filter(a => a % 3 == 0 || a % 5 == 0).sum)

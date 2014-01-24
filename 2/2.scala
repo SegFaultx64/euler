@@ -7,3 +7,8 @@
 val fib: Stream[BigInt] = 1 #:: 2 #:: fib.zip(fib.tail).map(p => p._1 + p._2)
 
 println(fib.takeWhile(_ < 4000000).filter(_  % 2 == 0).sum)
+
+// More effient but uglier
+// This is only one iteration rather than 2
+
+println(fib.takeWhile(_ < 4000000).foldLeft(BigInt(0))((a, b) => if (b % 2 == 0) a + b else a))
